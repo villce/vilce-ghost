@@ -1,0 +1,20 @@
+version: "3"
+services:
+  ghost-app:
+    image: my_ghost:1.0
+    container_name: vilce-ghost
+    ports:
+      - "2368:2368"
+    volumes:
+      - /Users/vilce/Desktop/vilceApplication/vilce/ghost/content:/var/lib/ghost/content
+  nginx:
+    image: my_nginx:1.0
+    container_name: vilce-nginx
+    depends_on:
+      - ghost-app
+    ports:
+      - "80:80"
+networks:
+  default:
+    external:
+      name: my_net
