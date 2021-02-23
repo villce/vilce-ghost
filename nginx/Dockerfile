@@ -1,3 +1,3 @@
-FROM my_nginx:1.0
-COPY nginx.conf /etc/nginx/nginx.conf
-EXPOSE 80
+FROM nginx
+COPY /usr/share/zoneinfo/Asia/Shanghai /etc/localtime
+COPY /usr/share/zoneinfo/Asia/Shanghai /etc/timezone
